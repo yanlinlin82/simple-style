@@ -1,9 +1,10 @@
-{{ define "main" }}
+{{- define "main" -}}
 <main class="page-content">
   <ul>
-    {{- range .Site.RegularPages }}
-    <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+    {{- range (.Paginate ( where .Site.RegularPages "Type" "==" "post" )).Pages }}
+    <li>{{ .Date.Format "2006-01-02 15:04" }} - <a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
     {{- end }}
   </ul>
+  {{ template "_internal/pagination.html" . }}
 </main>
-{{ end }}
+{{- end -}}

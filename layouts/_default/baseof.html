@@ -1,38 +1,61 @@
-<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN" "http://www.wapforum.org/DTD/xhtml-mobile10.dtd">
-<html lang="{{ .Site.LanguageCode | default "en-us" }}">
-<head xmlns="http://www.w3.org/1999/xhtml">
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>{{ if not .IsHome }}{{ .Title }} - {{ end }}{{ .Site.Title }}</title>
-  <link rel="stylesheet" href="/css/main.css">
-  <link rel="icon" href="{{ .Site.Params.favicon }}" type="image/x-icon">
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ if not .IsHome }}{{ .Title }} - {{ end }}{{ .Site.Title }}</title>
+<style type="text/css">
+body{margin:16px auto;max-width:960px;padding:0 10px;color:#333;line-height:1.6}
+h1,h2,h3{line-height:1.2}
+h1{font-size:160%}
+h2{font-size:120%}
+h3,h4,h5,h6{font-size:100%}
+header{margin:0;padding:0;border-bottom:1px solid #ccc;line-height:1}
+footer{margin:0;padding:10px 0;border-top:1px solid #ccc;line-height:1;text-align:center}
+p,div,table,ul,ol{margin:10px 0}
+a{color:#00f}
+a:visited{color:#009}
+a:hover{color:#f00}
+header a,header a:visited,footer a,footer a:visited,h1 a,h1 a:visited,h2 a,h2 a:visited{text-decoration:none;color:#333}
+header a:hover,footer a:hover,h1 a:hover,h2 a:hover{text-decoration:none;color:#f00}
+nav{padding:10px 0;text-align:right}
+nav a{padding-left:15px}
+table{border-collapse:collapse}
+th,td{border:1px solid gray;padding:2px 5px}
+pre{border:1px solid #ccc;background-color:#f0f0f0;padding:5px}
+code{padding:1px 2px}
+ul.pagination{list-style-type:none;text-align:center}
+li.page-item{display:inline;padding-right:15px}
+</style>
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
 </head>
 <body>
-  <div class="wrapper">
-    <header class="site-header">
-      <div class="site-title">
-        <h1><a href="{{ "" | relLangURL }}">{{ .Site.Title }}</a></h1>
-        <h2><a href="{{ "" | relLangURL }}">{{ .Site.Params.subtitle }}</a></h2>
-      </div>
-      <nav class="site-nav">
-        {{- range .Site.Menus.main -}}
-        <a class="nav-item" href="{{ .URL }}">{{ .Name }}</a>
-        {{- end -}}
-      </nav>
-    </header>
-    <div id="content">
-      {{ block "main" . }}{{- end }}
-    </div>
-    <footer class="site-footer">
-      <div class="copy">
-        {{- if .Site.Copyright -}}
-          {{- .Site.Copyright -}}
-        {{- else -}}
-          &copy; 2019 Linlin Yan. <a href="https://creativecommons.org/licenses/by/4.0/deed.zh">CC-BY-4.0</a>
-        {{- end -}}
-      </div>
-    </footer>
+<header>
+  <div>
+    <h1><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></h1>
+    {{- if .Site.Params.subtitle }}<h2><a href="{{ .Site.BaseURL }}">{{ .Site.Params.subtitle }}</a></h2>{{- end }}
   </div>
+  <nav>
+    {{- range .Site.Menus.main -}}
+    <a href="{{ .URL }}">{{ .Name }}</a>
+    {{- end -}}
+  </nav>
+</header>
+<main>
+  <article class="content">
+    {{ block "main" . }}{{- end }}
+  </article>
+</main>
+<footer>
+  <div>
+    <div>
+      {{- if .Site.Copyright -}}
+      {{- .Site.Copyright -}}
+      {{- else -}}
+      &copy; 2019 Linlin Yan. <a href="https://creativecommons.org/licenses/by/4.0/deed.zh">CC-BY-4.0</a>
+      {{- end -}}
+    </div>
+  </div>
+</footer>
 </body>
 </html>

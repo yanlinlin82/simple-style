@@ -1,29 +1,16 @@
 {{ define "main" }}
-<main class="page-content">
-	{{- with .Title }}
-	<header class="main__header">
-		<h1 class="main__title">{{ . }}</h1>
-	</header>
-	{{- end }}
-	{{- with .Content }}
-	<div class="content main__content clearfix">
-		{{ . }}
-	</div>
-	{{- end }}
-	{{- range .Paginator.Pages }}
-		{{- .Render "summary" }}
-	{{- end }}
-	<article class="content">
-    <div class="post-header">
-			<h1 class="post-title">{{ .Title }}</h1>
-		</div>
-    <div class="post-content">
-			{{ .Content }}
-		</div>
-	</article>
-  <div class="post-nav">
-    <div class="post-nav-prev"><a href="/">&lt; ABC</a></div>
-    <div class="post-nav-next"><a href="/">XYZ &gt;</a></div>
-  </div>
-</main>
+{{- with .Content }}
+<div class="content main__content clearfix">
+  {{ . }}
+</div>
+{{- end }}
+{{- range .Paginator.Pages }}
+  {{- .Render "summary" }}
+{{- end }}
+<div class="post-header">
+  <h1 class="post-title">{{ .Title }}</h1>
+</div>
+<div class="post-content">
+  {{ .Content }}
+</div>
 {{ end }}
