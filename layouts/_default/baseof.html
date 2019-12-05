@@ -25,7 +25,13 @@
       {{ block "main" . }}{{- end }}
     </div>
     <footer class="site-footer">
-      <div class="copy">&copy; 2019 Linlin Yan. <a href="https://creativecommons.org/licenses/by/4.0/deed.zh">CC-BY-4.0</a></div>
+      <div class="copy">
+        {{- if .Site.Copyright -}}
+          {{- .Site.Copyright -}}
+        {{- else -}}
+          &copy; 2019 Linlin Yan. <a href="https://creativecommons.org/licenses/by/4.0/deed.zh">CC-BY-4.0</a>
+        {{- end -}}
+      </div>
     </footer>
   </div>
 </body>
