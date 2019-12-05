@@ -1,0 +1,24 @@
+{{ define "main" }}
+<main class="page-content">
+	<article class="content">
+    <div class="post-header">
+			<h1 class="post-title">{{ .Title }}</h1>
+		</div>
+    <div class="post-meta">
+      <div><span class="post-time">2019-12-03 11:02:03</span></div>
+      <div>
+        <span class="post-tag"><a href="/tag-1">#Tag-1</a></span>
+        <span class="post-tag"><a href="/tag-2">#Tag-2</a></span>
+        <span class="post-tag"><a href="/tag-3">#Tag-3</a></span>
+      </div>
+    </div>
+    <div class="post-content">
+			{{ .Content }}
+		</div>
+	</article>
+  <div class="post-nav">
+    <div class="post-nav-prev"><a href="/">&lt; ABC</a></div>
+    <div class="post-nav-next"><a href="/">XYZ &gt;</a></div>
+  </div>
+</main>
+{{ end }}

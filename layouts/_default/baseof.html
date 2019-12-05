@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN" "http://www.wapforum.org/DTD/xhtml-mobile10.dtd">
+<html lang="{{ .Site.LanguageCode | default "en-us" }}">
+<head xmlns="http://www.w3.org/1999/xhtml">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>{{ if not .IsHome }}{{ .Title }} - {{ end }}{{ .Site.Title }}</title>
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="{{ .Site.Params.favicon }}" type="image/x-icon">
+</head>
+<body>
+  <div class="wrapper">
+    <header class="site-header">
+      <div class="site-title">
+        <h1><a href="{{ "" | relLangURL }}">{{ .Site.Title }}</a></h1>
+        <h2><a href="{{ "" | relLangURL }}">{{ .Site.Params.subtitle }}</a></h2>
+      </div>
+      <nav class="site-nav">
+        {{- range .Site.Menus.main -}}
+        <a class="nav-item" href="{{ .URL }}">{{ .Name }}</a>
+        {{- end -}}
+      </nav>
+    </header>
+    <div id="content">
+      {{ block "main" . }}{{- end }}
+    </div>
+    <footer class="site-footer">
+      <div class="copy">&copy; 2019 Linlin Yan. <a href="https://creativecommons.org/licenses/by/4.0/deed.zh">CC-BY-4.0</a></div>
+    </footer>
+  </div>
+</body>
+</html>
