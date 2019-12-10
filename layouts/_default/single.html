@@ -3,12 +3,12 @@
   <h1>{{ .Title }}</h1>
 </div>
 <div>
-  {{ with .Date.Format "2006-01-02 15:04" -}}
-  <div><span>{{ . }}</span></div>
+  {{ if .Date -}}
+  <div>{{ .Date.Format "2006-01-02 15:04" }}</span>
   {{ end -}}
   {{ if .Params.tags -}}
   <div>
-    {{ range .Params.tags }}
+    {{ range .Params.tags -}}
     <span><a href="{{ "tags/" | relLangURL }}{{ . | urlize }}/">#{{ . }}</a></span>
     {{ end -}}
   </div>
