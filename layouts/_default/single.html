@@ -1,18 +1,20 @@
-{{ define "main" }}
-<div class="post-header">
-  <h1 class="post-title">{{ .Title }}</h1>
+{{ define "main" -}}
+<div>
+  <h1>{{ .Title }}</h1>
 </div>
-<div class="post-meta">
-  <div><span class="post-time">2019-12-03 11:02:03</span></div>
+<div>
+  {{ with .Date.Format "2006-01-02 15:04" -}}
+  <div><span>{{ . }}</span></div>
+  {{ end -}}
   {{ if .Params.tags -}}
   <div>
     {{ range .Params.tags }}
-    <span class="post-tag"><a href="{{ "tags/" | relLangURL }}{{ . | urlize }}/">#{{ . }}</a></span>
-    {{- end }}
+    <span><a href="{{ "tags/" | relLangURL }}{{ . | urlize }}/">#{{ . }}</a></span>
+    {{ end -}}
   </div>
-  {{- end }}
+  {{ end -}}
 </div>
-<div class="post-content">
-  {{ .Content }}
+<div>
+  {{ .Content -}}
 </div>
-{{ end }}
+{{ end -}}
