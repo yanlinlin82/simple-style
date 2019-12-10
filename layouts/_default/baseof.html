@@ -27,7 +27,9 @@ code{padding:1px 2px}
 ul.pagination{list-style-type:none;text-align:center}
 li.page-item{display:inline;padding-right:15px}
 </style>
-<link rel="icon" href="/favicon.ico" type="image/x-icon">
+{{ with .Site.Params.favicon -}}
+<link rel="icon" href="{{ . }}" type="image/x-icon">
+{{ end -}}
 </head>
 <body>
 <header>
