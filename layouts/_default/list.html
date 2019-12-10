@@ -3,9 +3,9 @@
   <h1 class="post-title">{{ .Title }}</h1>
 </div>
 <ul>
-  {{- range .Paginator.Pages }}
+  {{ range .Paginator.Pages -}}
   <li>{{ .Date.Format "2006-01-02 15:04" }} - <a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
-  {{- end }}
+  {{ end -}}
 </ul>
-{{ template "_internal/pagination.html" . }}
-{{- end -}}
+{{ template "_internal/pagination.html" . -}}
+{{ end -}}
