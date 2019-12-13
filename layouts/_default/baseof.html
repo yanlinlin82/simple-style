@@ -54,22 +54,11 @@ li.page-item{display:inline;padding-right:15px}
 <footer>
   <div>
     <div>
-      &copy;
       {{ if .Site.Copyright -}}
-        {{- .Site.Copyright -}}
+        {{- .Site.Copyright | markdownify -}}
       {{- else -}}
-        2019 Linlin Yan
+        &copy; 2019 Linlin Yan. <a href="https://creativecommons.org/licenses/by/4.0/deed.zh">CC-BY-4.0</a>
       {{- end -}}
-      .
-      {{ if .Site.Params.license -}}
-        {{- if .Site.Params.licenseLink -}}
-          <a href="{{ .Site.Params.licenseLink }}">{{- .Site.Params.license -}}</a>
-        {{- else -}}
-          {{- .Site.Params.license -}}
-        {{- end -}}
-      {{- else -}}
-        <a href="https://creativecommons.org/licenses/by/4.0/deed.zh">CC-BY-4.0</a>
-      {{- end }}
     </div>
   </div>
 </footer>
