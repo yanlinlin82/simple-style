@@ -6,10 +6,14 @@
   {{ if .Date -}}
   <div>{{ .Date.Format "2006-01-02 15:04" }}</span>
   {{ end -}}
-  {{ if .Params.tags -}}
+  {{ $taxo := "tags" -}}
+  {{ if .Param $taxo -}}
   <div>
-    {{ range .Params.tags -}}
-    <span><a href="{{ "tags/" | relLangURL }}{{ . | urlize }}/">#{{ . }}</a></span>
+    {{ range .Param $taxo -}}
+      {{ $name := . -}}
+      {{ with $.Site.GetPage (printf "/%s/%s" $taxo ($name | urlize)) -}}
+    <span><a href="{{ .Permalink }}">#{{ $name }}</a></span>
+      {{ end -}}
     {{ end -}}
   </div>
   {{ end -}}
