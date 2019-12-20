@@ -19,5 +19,9 @@ In `config.toml`
 subtitle = "Sub title of the site"
 favicon = "/<path-to-site-icon>/logo.ico"
 githubUrl = "https://github.com/<your-name>/<site-proj-name>/"
+referrer = "always"
+author = "..."
+description = "..."
+keywords = "..."
 googleSiteVerification = "<google-site-verification-code>"
 ```
