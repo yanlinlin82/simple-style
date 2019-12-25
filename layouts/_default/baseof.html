@@ -37,6 +37,13 @@ li.page-item{display:inline;padding-right:15px}
 </head>
 <body>
 <header>
+  {{ with .Site.Menus.parent -}}
+  <nav>
+    {{ range . -}}
+    <a href="{{ .URL }}">{{ .Name }}</a>
+    {{ end -}}
+  </nav>
+  {{ end -}}
   <div>
     <h1><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></h1>
     {{- if .Site.Params.subtitle }}<h2><a href="{{ .Site.BaseURL }}">{{ .Site.Params.subtitle }}</a></h2>{{- end }}
