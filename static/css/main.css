@@ -21,3 +21,5 @@ pre{border:1px solid #999;background-color:#f0f0f0;padding:5px;overflow:auto;max
 pre code{border:0;background:none;padding:0}
 ul.pagination{list-style-type:none;text-align:center}
 li.page-item{display:inline;padding-right:15px}
+svg.permalink{color:#666;fill:currentColor}
+svg:hover.permalink{color:#f00;fill:currentColor}
