@@ -1,10 +1,13 @@
 {{ define "main" -}}
-<div>
+<div class="title">
   <h1>{{ .Title }}</h1>
+  {{ with .Params.Subtitle -}}
+  <h2>{{ . }}</h2>
+  {{ end -}}
 </div>
-<div>
+<div class="meta">
   {{ if .Date -}}
-  <div>{{ .Date.Format "2006-01-02 15:04" }}</span>
+  <div>{{ .Date.Format "2006-01-02 15:04" }}</div>
   {{ end -}}
   {{ $taxo := "tags" -}}
   {{ if .Param $taxo -}}
@@ -18,7 +21,7 @@
   </div>
   {{ end -}}
 </div>
-<div>
+<div class="content">
   {{ .Content -}}
 </div>
 {{ end -}}
