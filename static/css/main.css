@@ -23,3 +23,14 @@ ul.pagination{list-style-type:none;text-align:center}
 li.page-item{display:inline;padding-right:15px}
 svg.permalink{color:#666;fill:currentColor}
 svg:hover.permalink{color:#f00;fill:currentColor}
+.title{padding:0;margin:20px 0}
+.meta,.content{padding:0;margin:10px 0}
+.title h1,.title h2{padding:0}
+.meta div{padding:0}
+.content h1{padding:0;margin:25px 0 0}
+.content h2{padding:0;margin:20px 0 0}
+.content h3{padding:0;margin:20px 0 0}
+.content h4{padding:0;margin:15px 0 0}
+.content h5{padding:0;margin:10px 0 0}
+.content h6{padding:0;margin:10px 0 0}
+.content p{padding:0;margin:10px 0}
