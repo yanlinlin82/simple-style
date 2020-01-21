@@ -4,7 +4,7 @@ h2{line-height:1.6;font-size:120%}
 h3,h4,h5,h6{line-height:1.2;font-size:100%}
 header{margin:0;padding:0;border-bottom:1px solid #999;line-height:1}
 footer{margin:0;padding:10px 0;border-top:1px solid #999;line-height:1;text-align:center}
-p,div,table,ul,ol{margin:10px 0}
+p,div,ul,ol{margin:10px 0}
 img{margin:10px auto;width:90%;max-width:600px;padding:0 10px;height:auto;display:block}
 hr{border:none;border-top:1px dashed #999;color:#fff;background-color:#fff;height:1px}
 a{color:#00f;word-wrap:break-word}
@@ -14,11 +14,11 @@ header a,header a:visited,footer a,footer a:visited,h1 a,h1 a:visited,h2 a,h2 a:
 header a:hover,footer a:hover,h1 a:hover,h2 a:hover,h3 a:hover,h4 a:hover,h5 a:hover,h6 a:hover{text-decoration:none;color:#f00}
 nav{padding:10px 0;text-align:right}
 nav a{padding-left:15px}
-table{border-collapse:collapse}
+table{border-collapse:collapse;font-size:.8em;margin:10px auto}
 th,td{border:1px solid gray;padding:2px 5px}
 code{border:1px dotted #999;background-color:#f0f0f0;padding:1px 2px;line-height:200%;word-wrap:break-word}
 pre{border:1px solid #999;background-color:#f0f0f0;padding:5px;overflow:auto;max-height:500px}
-pre code{border:0;background:none;padding:0}
+pre code{border:0;background:none;padding:0;font-size:.8em}
 ul.pagination{list-style-type:none;text-align:center}
 li.page-item{display:inline;padding-right:15px}
 svg.permalink{color:#666;fill:currentColor}
