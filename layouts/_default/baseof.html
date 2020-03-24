@@ -37,10 +37,13 @@
 <footer>
   <div>
     <div>
-      {{ if .Site.Copyright -}}
-        {{- .Site.Copyright | markdownify -}}
+      {{- if .Site.Copyright -}}
+        {{ .Site.Copyright | markdownify }}
       {{- else -}}
         &copy; 2019 Linlin Yan. <a href="https://creativecommons.org/licenses/by/4.0/deed.zh">CC-BY-4.0</a>
+      {{- end -}}
+      {{- if .Site.Params.ShowThemeInfo -}}
+        <p>Powered by <a href="https://gohugo.io/">Hugo</a> with <a href="https://github.com/yanlinlin82/simple-style">Simple-Style</a>
       {{- end -}}
     </div>
   </div>
