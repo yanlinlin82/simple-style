@@ -10,7 +10,7 @@
 </div>
 <div class="meta">
   {{ if .Date -}}
-  <div>{{ .Date.Format "2006-01-02 15:04" }}</div>
+  <div>{{ .Date.Format (.Site.Params.dateFormat | default "2006-01-02 15:04") }}</div>
   {{ end -}}
   {{ $taxo := "tags" -}}
   {{ if .Param $taxo -}}
