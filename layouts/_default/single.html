@@ -5,9 +5,11 @@
   <h2>{{ . }}</h2>
   {{ end -}}
 </div>
+{{ if .Site.Params.EnableSearch -}}
 <div style="position: fixed; right:-30px; max-width:300px; overflow:auto; top: 1px; width: 300px; bottom:100px">
 {{ partial "search.html" . }}
 </div>
+{{ end -}}
 <div class="meta">
   {{ if .Date -}}
   <div>{{ .Date.Format (.Site.Params.dateFormat | default "2006-01-02 15:04") }}</div>
