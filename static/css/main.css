@@ -1,3 +1,12 @@
+body,
+div,
+table,
+p {
+    margin: 0;
+    font-family: Arial, "Microsoft YaHei", Sans-Serif;
+    font-size: 16px;
+}
+
 body {
     margin: 0 auto;
     max-width: 960px;
@@ -19,7 +28,6 @@ header h1 {
 header h2 {
     font-size: 120%;
 }
-
 
 footer {
     margin: 0;
@@ -45,13 +53,6 @@ article h5,
 article h6 {
     line-height: 1.2;
     font-size: 100%
-}
-
-p,
-div,
-ul,
-ol {
-    margin: 10px 0
 }
 
 img {
@@ -205,28 +206,33 @@ nav#TableOfContents {
     padding: 0 10px;
     vertical-align: top;
 }
+
 nav#TableOfContents:before {
     content: 'Content';
     font-weight: bold;
 }
+
 nav#TableOfContents:lang(*-Hans)::before {
     content: '目录';
     font-weight: bold;
 }
+
 nav#TableOfContents ul {
     margin: 0;
     padding-inline-start: 24px;
 }
+
 .content-with-toc {
     width: calc(100% - 220px);
     margin: 0;
 }
 
-@media (max-width:600px) {
+@media (max-width:500px) {
     nav#TableOfContents {
         float: none;
         width: 100%;
     }
+
     .content-with-toc {
         width: 100%;
     }
@@ -276,7 +282,7 @@ nav#TableOfContents ul {
     margin: 10px 0
 }
 
-.search {
+div.search2 {
     position: fixed;
     right: -30px;
     max-width: 300px;
@@ -286,6 +292,65 @@ nav#TableOfContents ul {
     bottom: 100px
 }
 
+div.search {
+    display: inline-block;
+    margin-bottom: -12px;
+}
+
+form.search {
+    width: 125px;
+    margin-left: 15px;
+}
+form.search input[type=text] {
+    padding: 5px 30px 5px 5px;
+    border: 1px solid #999;
+    float: left;
+    width: 80px;
+}
+form.search input[type=text]:focus {
+    border: 1px solid #333;
+    float: left;
+    width: 80px;
+}
+form.search button {
+    float: left;
+    width: 30px;
+    padding: 5px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    margin-left: -30px;
+}
+form.search .fa-search::before {
+    content: "\1F50D";
+    font-style: normal;
+    color: #999;
+}
+form.search button:hover {
+    color: #333;
+}
+
 .article-list li {
-    line-height: 1.5em;
+    margin-bottom: 0.5em;
+}
+
+.article-list li .article-date,
+.article-list li .article-title {
+    display: inline-block;
+}
+
+.article-list li .article-date:after {
+    content: ' - ';
+}
+
+@media (max-width:500px) {
+
+    .article-list li .article-date,
+    .article-date li .article-title {
+        display: block;
+    }
+
+    .article-list li .article-date:after {
+        content: '';
+    }
 }

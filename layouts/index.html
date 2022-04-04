@@ -4,7 +4,10 @@
 </div>
 <ul class="article-list">
   {{ range (.Paginate ( where .Site.RegularPages "Type" "in" site.Params.mainSections )).Pages -}}
-  <li>{{ .Date.Format (.Site.Params.dateFormat | default "2006-01-02 15:04") }} - <a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+  <li class="article-item">
+    <div class="article-date">{{ .Date.Format (.Site.Params.dateFormat | default "2006-01-02 15:04") }}</div>
+    <div class="article-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></div>
+  </li>
   {{ end -}}
 </ul>
 {{ template "_internal/pagination.html" . -}}

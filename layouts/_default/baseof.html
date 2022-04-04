@@ -27,12 +27,8 @@
       {{- range .Site.Menus.main -}}
       <a href="{{ .URL }}">{{ .Name }}</a>
       {{- end -}}
-    </nav>
-    {{ if .Site.Params.EnableSearch -}}
-    <div class="search">
-    {{ partial "search.html" . }}
-    </div>
-    {{ end -}}
+      {{ partial "search.html" -}}
+      </nav>
   </header>
   <main>
     {{ block "main" . }}{{- end }}
