@@ -1,33 +1,36 @@
 {{ define "main" -}}
-<div class="title">
-  <h1>{{ .Title }}</h1>
-  {{ with .Params.Subtitle -}}
-  <h2>{{ . }}</h2>
+<article>
+  <div class="title">
+    <h1>{{ .Title }}</h1>
+    {{ with .Params.Subtitle -}}
+    <h2>{{ . }}</h2>
+    {{ end -}}
+  </div>
+  {{ if .Date -}}
+  <div class="meta">{{ .Date.Format (.Site.Params.dateFormat | default "2006-01-02 15:04") }}</div>
   {{ end -}}
-</div>
-{{ if .Site.Params.EnableSearch -}}
-<div class="search">
-{{ partial "search.html" . }}
-</div>
-{{ end -}}
-{{ if .Date -}}
-<div class="meta">{{ .Date.Format (.Site.Params.dateFormat | default "2006-01-02 15:04") }}</div>
-{{ end -}}
-{{ $taxo := "tags" -}}
-{{ if .Param $taxo -}}
-<div class="meta">
-  {{ range .Param $taxo -}}
+  {{ $taxo := "tags" -}}
+  {{ if .Param $taxo -}}
+  <div class="meta">
+    {{ range .Param $taxo -}}
     {{ $name := . -}}
     {{ with $.Site.GetPage (printf "/%s/%s" $taxo ($name | urlize)) -}}
-  <span><a href="{{ .Permalink }}">#{{ $name }}</a></span>
+    <span><a href="{{ .Permalink }}">#{{ $name }}</a></span>
     {{ end -}}
+    {{ end -}}
+  </div>
   {{ end -}}
-</div>
-{{ end -}}
-<div class="content">
-  {{ .Content -}}
-</div>
-<div class="toc">
-{{ partial "toc.html" . }}
-</div>
+  <div class="artical-body">
+  {{ if ne .TableOfContents "<nav id=\"TableOfContents\"></nav>" }}
+    {{ .TableOfContents }}
+    <div class="content-with-toc">
+      {{ .Content -}}
+    </div>
+  {{ else }}
+    <div class="content">
+      {{ .Content -}}
+    </div>
+  {{ end }}
+  </div>
+</article>
 {{ end -}}

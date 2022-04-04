@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  {{ partial "html-meta.html" . -}}
+{{ partial "html-meta.html" . -}}
   <title>{{ if not .IsHome }}{{ .Title }} - {{ end }}{{ .Site.Title }}</title>
   <link rel="stylesheet" type="text/css" href="{{ "/css/main.css" | relURL }}">
-  {{ with .Site.Params.favicon -}}
+{{ with .Site.Params.favicon -}}
   <link rel="shortcut icon" href="{{ . }}" type="image/x-icon">
-  {{ end -}}
+{{ end -}}
 </head>
 <body>
   <header>
@@ -28,11 +28,14 @@
       <a href="{{ .URL }}">{{ .Name }}</a>
       {{- end -}}
     </nav>
+    {{ if .Site.Params.EnableSearch -}}
+    <div class="search">
+    {{ partial "search.html" . }}
+    </div>
+    {{ end -}}
   </header>
   <main>
-    <article>
-      {{ block "main" . }}{{- end }}
-    </article>
+    {{ block "main" . }}{{- end }}
   </main>
   <footer>
     <div>

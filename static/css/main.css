@@ -1,9 +1,8 @@
 body {
-    margin: 16px auto;
-    max-width: 677px;
-    padding: 0 10px;
+    margin: 0 auto;
+    max-width: 960px;
+    padding: 10px;
     color: #333;
-    line-height: 1.6
 }
 
 h1 {
@@ -73,7 +72,7 @@ a:visited {
 }
 
 a:hover {
-    color: #f00
+    color: #f80;
 }
 
 header a,
@@ -93,7 +92,7 @@ h5 a:visited,
 h6 a,
 h6 a:visited {
     text-decoration: none;
-    color: #333
+    color: #333;
 }
 
 header a:hover,
@@ -108,12 +107,12 @@ h6 a:hover {
     color: #f00
 }
 
-nav {
+header nav {
     padding: 10px 0;
     text-align: right
 }
 
-nav a {
+header nav a {
     padding-left: 15px
 }
 
@@ -189,6 +188,41 @@ svg:hover.permalink {
     margin: 10px 0
 }
 
+nav#TableOfContents {
+    float: right;
+    width: 200px;
+    overflow: auto;
+    margin: 0;
+    padding: 0 10px;
+    vertical-align: top;
+}
+nav#TableOfContents:before {
+    content: 'Content';
+    font-weight: bold;
+}
+nav#TableOfContents:lang(*-Hans)::before {
+    content: '目录';
+    font-weight: bold;
+}
+nav#TableOfContents ul {
+    margin: 0;
+    padding-inline-start: 24px;
+}
+.content-with-toc {
+    width: calc(100% - 220px);
+    margin: 0;
+}
+
+@media (max-width:600px) {
+    nav#TableOfContents {
+        float: none;
+        width: 100%;
+    }
+    .content-with-toc {
+        width: 100%;
+    }
+}
+
 .title h1,
 .title h2 {
     padding: 0
@@ -241,14 +275,4 @@ svg:hover.permalink {
     top: 1px;
     width: 300px;
     bottom: 100px
-}
-
-.toc {
-    position: fixed;
-    right: 50px;
-    max-width: 255px;
-    overflow: auto;
-    top: 120px;
-    width: 220px;
-    bottom: 90px
 }
