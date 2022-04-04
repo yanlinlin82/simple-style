@@ -35,3 +35,5 @@ svg:hover.permalink{color:#f00;fill:currentColor}
 .content h5{padding:0;margin:10px 0 0}
 .content h6{padding:0;margin:10px 0 0}
 .content p{padding:0;margin:10px 0}
+.search{position:fixed; right:-30px; max-width:300px; overflow:auto; top: 1px; width: 300px; bottom:100px}
+.toc{position:fixed; right:50px; max-width:255px; overflow:auto; top: 120px; width: 220px; bottom:90px}
