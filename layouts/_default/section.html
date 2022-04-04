@@ -5,7 +5,7 @@
 <div>
   {{ .Content -}}
 </div>
-<ul>
+<ul class="article-list">
   {{ range .Paginator.Pages -}}
   <li>{{ with .Date }}{{ .Format "2006-01-02 15:04" }} - {{ end }}<a href="{{ .RelPermalink }}">{{ .Title }}</a>{{ with .Description }}: {{ . }}{{ end }}</li>
   {{ end -}}

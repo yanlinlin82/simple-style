@@ -2,7 +2,7 @@
 <div>
   {{ .Content -}}
 </div>
-<ul>
+<ul class="article-list">
   {{ range (.Paginate ( where .Site.RegularPages "Type" "in" site.Params.mainSections )).Pages -}}
   <li>{{ .Date.Format (.Site.Params.dateFormat | default "2006-01-02 15:04") }} - <a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
   {{ end -}}

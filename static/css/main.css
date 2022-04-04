@@ -5,24 +5,6 @@ body {
     color: #333;
 }
 
-h1 {
-    line-height: 2;
-    font-size: 160%
-}
-
-h2 {
-    line-height: 1.6;
-    font-size: 120%
-}
-
-h3,
-h4,
-h5,
-h6 {
-    line-height: 1.2;
-    font-size: 100%
-}
-
 header {
     margin: 0;
     padding: 0;
@@ -30,12 +12,39 @@ header {
     line-height: 1
 }
 
+header h1 {
+    font-size: 160%;
+}
+
+header h2 {
+    font-size: 120%;
+}
+
+
 footer {
     margin: 0;
     padding: 10px 0;
     border-top: 1px solid #999;
     line-height: 1;
     text-align: center
+}
+
+article h1 {
+    line-height: 2;
+    font-size: 160%
+}
+
+article h2 {
+    line-height: 1.6;
+    font-size: 120%
+}
+
+article h3,
+article h4,
+article h5,
+article h6 {
+    line-height: 1.2;
+    font-size: 100%
 }
 
 p,
@@ -104,16 +113,16 @@ h4 a:hover,
 h5 a:hover,
 h6 a:hover {
     text-decoration: none;
-    color: #f00
+    color: #f80;
 }
 
 header nav {
     padding: 10px 0;
-    text-align: right
+    text-align: right;
 }
 
 header nav a {
-    padding-left: 15px
+    padding-left: 15px;
 }
 
 table {
@@ -275,4 +284,8 @@ nav#TableOfContents ul {
     top: 1px;
     width: 300px;
     bottom: 100px
+}
+
+.article-list li {
+    line-height: 1.5em;
 }
