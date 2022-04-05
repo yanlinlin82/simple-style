@@ -1,10 +1,11 @@
-body,
-div,
-table,
-p {
-    margin: 0;
+body {
     font-family: Arial, "Microsoft YaHei", Sans-Serif;
     font-size: 16px;
+}
+
+div,
+table {
+    margin: 0;
 }
 
 body {
@@ -12,6 +13,10 @@ body {
     max-width: 960px;
     padding: 10px;
     color: #333;
+}
+
+p {
+    margin: 0.5em 0;
 }
 
 header {
