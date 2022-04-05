@@ -14,7 +14,7 @@
   <div class="meta">
     {{ range .Param $taxo -}}
     {{ $name := . -}}
-    {{ with $.Site.GetPage (printf "/%s/%s" $taxo ($name | urlize)) -}}
+    {{ with $.Site.GetPage (printf "/%s/%s" $taxo ($name | anchorize)) -}}
     <span><a href="{{ .Permalink }}">#{{ $name }}</a></span>
     {{ end -}}
     {{ end -}}
