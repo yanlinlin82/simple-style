@@ -1,4 +1,5 @@
-{{ if .Site.Params.Search -}}
+{{ if isset site.Params "search" -}}
+{{ if eq site.Params.Search "baidu" -}}
 <div class="search">
   <script>
     function check_search() {
@@ -8,7 +9,7 @@
         document.getElementById('keyword').focus();
         return false;
       }
-      document.getElementById('wd').value = s + " site:{{ .Site.BaseURL }}";
+      document.getElementById('wd').value = s + " site:{{ site.BaseURL }}";
       return true;
     }
   </script>
@@ -20,4 +21,7 @@
       </svg></button>
   </form>
 </div>
+{{ else -}}
+{{ errorf "Unknown 'Site.Params.Search' value '%s'! Only 'baidu' is supported now." site.Params.Search }}
+{{ end -}}
 {{ end -}}
