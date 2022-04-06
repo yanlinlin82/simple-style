@@ -12,11 +12,16 @@
   {{ $taxo := "tags" -}}
   {{ if .Param $taxo -}}
   <div class="meta">
+    {{ $data := newScratch }}
     {{ range .Param $taxo -}}
     {{ $name := . -}}
-    {{ with $.Site.GetPage (printf "/%s/%s" $taxo ($name | anchorize)) -}}
-    <span><a href="{{ .Permalink }}">#{{ $name }}</a></span>
-    {{ end -}}
+    {{ with $.Site.GetPage (printf "/%s/%s" $taxo ($name | anchorize)) }}
+    {{ $data.Set "url" .Permalink }}
+    {{ end }}
+    {{ with $.Site.GetPage (printf "/%s/%s" $taxo ($name | urlize)) }}
+    {{ $data.Set "url" .Permalink }}
+    {{ end }}
+    <div class="tag"><a href="{{ $data.Get "url" }}">#{{ $name }}</a></div>
     {{ end -}}
   </div>
   {{ end -}}

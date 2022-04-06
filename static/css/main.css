@@ -203,6 +203,11 @@ svg:hover.permalink {
     margin: 10px 0
 }
 
+.tag {
+    display: inline-block;
+    margin-right: 10px;
+}
+
 nav#TableOfContents {
     float: right;
     width: 200px;
