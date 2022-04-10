@@ -1,0 +1,17 @@
+{{ if or .Site.Params.ExternalLinkIcon .Site.Params.ExternalLinkNewWindow -}}
+<script>
+window.onload = function(){
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].hostname != window.location.hostname) {
+{{ if .Site.Params.ExternalLinkIcon -}}
+            links[i].className += 'external';
+{{ end -}}
+{{ if .Site.Params.ExternalLinkNewWindow -}}
+            links[i].setAttribute('target', '_blank');
+{{ end -}}
+        }
+    }
+}
+</script>
+{{ end -}}

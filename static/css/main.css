@@ -122,6 +122,13 @@ h6 a:hover {
     color: #f80;
 }
 
+a.external {
+    background-image: url("/images/external-link-icon.svg");
+    background-position: center right;
+    background-repeat: no-repeat;
+    padding-right: 13px;
+}
+
 header nav {
     padding: 10px 0;
     text-align: right;

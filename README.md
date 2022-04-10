@@ -26,4 +26,6 @@ keywords = "..."
 googleSiteVerification = "<google-site-verification-code>"
 search = "..."  # baidu, google, bing, duckduckgo
 dateFormat = "Mon Jan 2 15:04:05 MST 2006"  # see: https://gohugo.io/functions/format/#gos-layout-string
+externalLinkIcon = true
+externalLinkNewWindow = true
 ```
