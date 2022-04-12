@@ -4,19 +4,21 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <base href="{{ .Site.BaseURL }}">
-  {{ partial "html-meta.html" . -}}
+  {{- partial "html-meta.html" . }}
   <title>{{ if not .IsHome }}{{ .Title }} - {{ end }}{{ .Site.Title }}</title>
-  {{ with .Site.Params.favicon }}<link rel="shortcut icon" href="{{ . }}" type="image/x-icon">{{ end -}}
+  {{- with .Site.Params.favicon }}<link rel="shortcut icon" href="{{ . }}" type="image/x-icon">{{ end }}
   <link rel="stylesheet" type="text/css" href="{{ "/css/main.css" | relURL }}">
+  {{- partial "google-tag-manager-head.html" . }}
 </head>
 <body>
   {{ partial "header.html" . -}}
   <main>
     {{ block "main" . }}{{- end }}
   </main>
-  {{ partial "footer.html" . -}}
-  {{ template "_internal/google_analytics.html" . -}}
-  {{ partial "github-corner.html" . -}}
-  {{ partial "external-links.html" . -}}
+  {{- partial "footer.html" . }}
+  {{- template "_internal/google_analytics.html" . }}
+  {{- partial "github-corner.html" . }}
+  {{- partial "external-links.html" . }}
 </body>
+{{- partial "google-tag-manager-body.html" . }}
 </html>
