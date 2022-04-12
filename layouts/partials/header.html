@@ -1,0 +1,19 @@
+<header>
+{{ with .Site.Menus.parent -}}
+  <nav>
+  {{ range . -}}
+    <a href="{{ .URL }}">{{ .Name }}</a>
+  {{ end -}}
+  </nav>
+{{ end -}}
+  <div>
+    <h1><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></h1>
+    {{- if .Site.Params.subtitle }}<h2><a href="{{ .Site.BaseURL }}">{{ .Site.Params.subtitle }}</a></h2>{{- end }}
+  </div>
+  <nav>
+    {{- range .Site.Menus.main -}}
+    <a href="{{ .URL }}">{{ .Name }}</a>
+    {{- end -}}
+    {{ partial "search.html" . }}
+  </nav>
+</header>
