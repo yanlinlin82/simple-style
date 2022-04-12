@@ -1,10 +1,12 @@
 <footer>
+  <p>
 {{- if .Site.Copyright -}}
   {{ .Site.Copyright | markdownify }}
 {{- else -}}
   &copy; 2019 Linlin Yan. <a href="https://creativecommons.org/licenses/by/4.0/deed.zh">CC-BY-4.0</a>
 {{- end -}}
+  </p>
 {{- if .Site.Params.ShowThemeInfo -}}
-  Powered by <a href="https://gohugo.io/">Hugo</a> with <a href="https://github.com/yanlinlin82/simple-style">Simple-Style</a>
+  <p>Powered by <a href="https://gohugo.io/">Hugo</a> with <a href="https://github.com/yanlinlin82/simple-style">Simple-Style</a></p>
 {{- end -}}
 </footer>
