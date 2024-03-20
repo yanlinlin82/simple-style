@@ -119,7 +119,11 @@ code {
 	margin-top: 20px;
 }
 
-.article-list li .article-date,
+.article-list li .article-date {
+	display: inline-block;
+	margin-right: 10px;
+}
+
 .article-list li .article-title {
 	display: inline-block;
 }
