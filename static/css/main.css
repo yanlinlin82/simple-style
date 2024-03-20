@@ -129,9 +129,20 @@ ul.pagination {
 	text-align: center
 }
 
-li.page-item {
+ul.pagination li.page-item {
 	display: inline;
 	padding: 5px
+}
+
+ul.pagination li.active a {
+	text-decoration: none;
+	font-weight: bold;
+	color: var(--text-color);
+}
+
+ul.pagination li.disabled a {
+	text-decoration: none;
+	color: var(--text-color);
 }
 
 nav#TableOfContents {
